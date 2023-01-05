@@ -88,8 +88,8 @@ export default class DockerContainer {
       9001,
       '-e',
       'DOCKER_LAMBDA_STAY_OPEN=1', // API mode
-      '-e',
-      'DOCKER_LAMBDA_WATCH=1', // Watch mode
+      // '-e',
+      // 'DOCKER_LAMBDA_WATCH=1', // Watch mode
     ]
 
     if (this.#layers.length > 0) {
