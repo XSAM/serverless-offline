@@ -152,14 +152,9 @@ export default class LambdaProxyIntegrationEventV2 {
       requestContext: {
         accountId: 'offlineContext_accountId',
         apiId: 'offlineContext_apiId',
-        authorizer:
-          authAuthorizer ||
-          assign(authContext, {
-            jwt: {
-              claims,
-              scopes,
-            },
-          }),
+        authorizer: authAuthorizer || {
+          lambda: authContext,
+        },
         domainName: 'offlineContext_domainName',
         domainPrefix: 'offlineContext_domainPrefix',
         http: {
